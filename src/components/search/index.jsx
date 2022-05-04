@@ -23,22 +23,22 @@ const Search = ({setFetchedData}) => {
         .then(data => setFetchedData(data.data.results))
         .catch(error => console.log(error));
     }
-  
-    console.log(characterList);
   return (
-    <form onSubmit={(e)=>{onSearch(e)}}>
+    <form className="search-form" onSubmit={(e)=>{onSearch(e)}}>
         <Autocomplete
+            className="autocomplete-field"
             disablePortal
             id="combo-box-demo"
             options={getOptions(characterList)}
             sx={{ width: 300 }}
             renderInput={
                 (params) => <TextField {...params} 
+                                className="text-field"
                                 name="character_name"
                                 label="Search characters" 
                                 onChange={(e)=>{setSearchQuery(e.target.value)}}/>}
             />
-        <Button type="submit">
+        <Button className="search-button" type="submit" variant="contained">
           Search
         </Button>
     </form>

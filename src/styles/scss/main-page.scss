@@ -1,0 +1,26 @@
+.character-list{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    .slot-link{
+        color: black;
+        text-decoration: none;
+        transition: .5s;
+        overflow: hidden;
+        border-radius: 25px;
+        margin: 0.5rem 0.5rem 1rem;
+        text-align: center;
+        border: solid 1px rgb(0, 0, 0);
+        .character-status{
+            .status{
+                border-radius: 5px;
+                padding: 5px;
+                color: white;
+                background-color: black;
+            }
+        }
+    }
+    .slot-link:hover{
+        transform: translateY(-5px);
+    }
+}

@@ -7,12 +7,10 @@ import { CharacterPage } from "./pages/character";
 function App() {
   return (
     <Router>
-        <Container maxWidth="md">
-          <Routes>
-            <Route path="/" element={<MainPage />} />
-            <Route path="/:id" element={<CharacterPage />} />
-          </Routes>
-        </Container>
+      <Routes>
+        <Route path="/" element={<MainPage />} />
+        <Route path="/:id" element={<CharacterPage />} />
+      </Routes>
     </Router>
   );
 }

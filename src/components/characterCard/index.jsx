@@ -1,14 +1,12 @@
-import Grid from '@mui/material/Grid'
 import { Link } from 'react-router-dom'
 
 export const CharacterCard = ({id, name, image, status}) => {
+    let statusColor = status === 'Alive' ? 'green' : status === 'Dead' ? 'red' : '';
     return (
-        <Grid item xs={4} key={id}>
-            <Link className='cardLink' to={`/${id}`}>
-                <img src={image} alt={name}/>
-                <h3>{name}</h3>
-                <p>Status: {status}</p>
-            </Link>
-        </Grid>
+        <Link className="slot-link" to={`/${id}`}>
+            <img className="character-image" src={image} alt={name}/>
+            <h3 className="character-name">{name}</h3>
+            <p className="character-status">Status: <span style={{ background: statusColor }} className="status">{status}</span></p>
+        </Link>
     )
 }
