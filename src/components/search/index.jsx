@@ -13,14 +13,15 @@ const Search = ({setFetchedData}) => {
     useEffect(() => {
         //fetch all characters data
         axios.get(`https://rickandmortyapi.com/api/character?name=${searchQuery}`)
-          .then(data => setCharacterList(data.data.results))
+          .then(res => setCharacterList(res.data.results))
           .catch(error => console.log(error));
     }, [searchQuery]);
 
     const onSearch = (e) => {
+      //fetch data for auto complete
       e.preventDefault()
       axios.get(`https://rickandmortyapi.com/api/character?name=${e.target.character_name.value}`)
-        .then(data => setFetchedData(data.data.results))
+        .then(res => setFetchedData(res.data.results)) //sets state in main/index.jsx
         .catch(error => console.log(error));
     }
   return (
@@ -38,9 +39,7 @@ const Search = ({setFetchedData}) => {
                                 label="Search characters" 
                                 onChange={(e)=>{setSearchQuery(e.target.value)}}/>}
             />
-        <Button className="search-button" type="submit" variant="contained">
-          Search
-        </Button>
+        <Button className="search-button" type="submit" variant="contained">Search</Button>
     </form>
   )
 }
