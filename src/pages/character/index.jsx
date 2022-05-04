@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
-import Box from '@mui/material/Box'
 import axios from 'axios'
+
+import { getStatusColor } from "../../modules";
 
 export const CharacterPage = () => {
     const [characterData, setCharacterData] = useState([]);
@@ -15,22 +16,22 @@ export const CharacterPage = () => {
     }, [id]);
 
     return (
-    <article>
+    <article className="character-section">
       <img 
+        className="character-image"
         src={image} 
         alt=''
         loading="lazy"
         style={{maxWidth: '100%', marginBottom: '16px'}} />
-        <section>x
-            <h2>{name}</h2>
-            <p><span>Status:</span> <span>{status}</span></p>
-            <p><span>Species:</span> {species}</p>
-            <p><span>Gender:</span> {gender}</p>
-            <p><span>Location:</span> {location?.name}</p>
-            <p><span>Origin:</span> {origin?.name}</p>
-            <p><span>Episodes with:</span> {episode?.length}</p>
-            <p><span>Created:</span> {created}</p>
-        </section>
+    <section className="character-bio">
+        <h2>{name}</h2>
+        <p className="character-status"><span>Status:</span> <span className="status" style={{ background: getStatusColor(status) }}>{status}</span></p>
+        <p><span>Species:</span> {species}</p>
+        <p><span>Gender:</span> {gender}</p>
+        <p><span>Location:</span> {location?.name}</p>
+        <p><span>Origin:</span> {origin?.name}</p>
+        <p><span>Created:</span> {created}</p>
+    </section>
     </article>
     )
 }

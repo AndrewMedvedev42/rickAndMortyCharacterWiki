@@ -1,7 +1,7 @@
 .character-list {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around; }
+  justify-content: center; }
   .character-list .slot-link {
     color: black;
     text-decoration: none;
@@ -11,10 +11,5 @@
     margin: 0.5rem 0.5rem 1rem;
     text-align: center;
     border: solid 1px black; }
-    .character-list .slot-link .character-status .status {
-      border-radius: 5px;
-      padding: 5px;
-      color: white;
-      background-color: black; }
   .character-list .slot-link:hover {
     transform: translateY(-5px); }
