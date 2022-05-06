@@ -12,7 +12,7 @@ const Search = ({setFetchedData}) => {
 
     useEffect(() => {
         //fetch all characters data
-        axios.get(`https://rickandmortyapi.com/api/character?name=${searchQuery}`)
+        axios.get(`https://rickandmortyapi.com/api/character/?name=${searchQuery}`)
           .then(res => setCharacterList(res.data.results))
           .catch(error => console.log(error));
     }, [searchQuery]);
@@ -36,7 +36,6 @@ const Search = ({setFetchedData}) => {
                 (params) => <TextField {...params} 
                                 className="text-field"
                                 name="character_name"
-                                label="Search characters" 
                                 onChange={(e)=>{setSearchQuery(e.target.value)}}/>}
             />
         <Button className="search-button" type="submit" variant="contained">Search</Button>

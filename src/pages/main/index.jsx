@@ -8,7 +8,7 @@ import Search from "../../components/search";
 export const MainPage = () => {
     const [fetchedData, setFetchedData] = useState([]);
     useEffect(() => {
-        axios.get(`https://rickandmortyapi.com/api/character/`)
+        axios.get(`https://rickandmortyapi.com/api/character`)
             .then(res => setFetchedData(res.data.results))
             .catch(error => console.log(error));
     }, []);

@@ -2,6 +2,7 @@ body{
     font-family: Arial, Helvetica, sans-serif;
     margin:0;
     padding: 1rem 2rem;
+    background-color: #d1da4b;
 }
 
 .logo-section{
@@ -26,7 +27,13 @@ body{
     padding-bottom: 1rem;
     display: flex;
     justify-content: center;
+    .autocomplete-field{
+        border-radius: 5px;
+        background-color: white;
+
+    }
     .search-button{
+        border-radius: 0;
         border-radius: none;
         background-color: #17acca;
     }

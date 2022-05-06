@@ -3,13 +3,15 @@
   flex-wrap: wrap;
   justify-content: center; }
   .character-list .slot-link {
+    background-color: white;
     color: black;
     text-decoration: none;
     transition: .5s;
     overflow: hidden;
-    border-radius: 25px;
+    border-radius: 15px;
     margin: 0.5rem 0.5rem 1rem;
     text-align: center;
-    border: solid 1px black; }
+    box-shadow: 5px 5px 0 rgba(0, 0, 0, 0.5); }
   .character-list .slot-link:hover {
-    transform: translateY(-5px); }
+    transform: translateY(-5px);
+    box-shadow: 5px 10px 0 rgba(0, 0, 0, 0.5); }
